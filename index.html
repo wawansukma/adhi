@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id" x-data="{ darkMode: localStorage.getItem('dark') === 'true', mobileMenu: false }" :class="{ 'dark': darkMode }">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adhi Sukmawan | Digital Solutions & WiFi Specialist</title>
+    <meta name="description" content="Solusi digital profesional: Jasa Iklan FB/IG, Pembuatan Website, dan Pemasangan WiFi oleh Adhi Sukmawan.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: { primary: '#2563eb' },
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300">
+
+    <nav class="fixed w-full z-[100] bg-white/80 dark:bg-slate-950/80 backdrop-blur-lg border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-2xl font-black text-primary tracking-tighter">ADHI.S</a>
+            
+            <div class="hidden md:flex items-center space-x-8 font-bold text-sm uppercase tracking-wide">
+                <a href="/" class="text-primary">Beranda</a>
+                <a href="/fb-ig-ads" class="hover:text-primary">Meta Ads</a>
+                <a href="/website-development" class="hover:text-primary">Website</a>
+                <a href="/pasang-wifi" class="hover:text-primary">Pasang WiFi</a>
+                <a href="/kontak" class="hover:text-primary">Kontak</a>
+                
+                <button @click="darkMode = !darkMode; localStorage.setItem('dark', darkMode)" class="p-2 bg-slate-100 dark:bg-slate-800 rounded-xl">
+                    <i data-lucide="sun" x-show="darkMode"></i>
+                    <i data-lucide="moon" x-show="!darkMode"></i>
+                </button>
+            </div>
+
+            <div class="flex items-center gap-4 md:hidden">
+                <button @click="darkMode = !darkMode; localStorage.setItem('dark', darkMode)" class="p-2 bg-slate-100 dark:bg-slate-800 rounded-xl">
+                    <i data-lucide="sun" x-show="darkMode" class="w-5 h-5"></i>
+                    <i data-lucide="moon" x-show="!darkMode" class="w-5 h-5"></i>
+                </button>
+                <button @click="mobileMenu = !mobileMenu" class="p-2 text-slate-900 dark:text-white">
+                    <i data-lucide="menu" x-show="!mobileMenu"></i>
+                    <i data-lucide="x" x-show="mobileMenu"></i>
+                </button>
+            </div>
+        </div>
+
+        <div x-show="mobileMenu" class="md:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 p-6 flex flex-col gap-4 font-bold text-lg">
+            <a href="/" class="py-2 border-b border-slate-50 dark:border-slate-800">Beranda</a>
+            <a href="/fb-ig-ads" class="py-2 border-b border-slate-50 dark:border-slate-800">Meta Ads</a>
+            <a href="/website-development" class="py-2 border-b border-slate-50 dark:border-slate-800">Website</a>
+            <a href="/pasang-wifi" class="py-2 border-b border-slate-50 dark:border-slate-800">Pasang WiFi</a>
+            <a href="/kontak" class="bg-primary text-white text-center py-4 rounded-2xl">Hubungi Saya</a>
+        </div>
+    </nav>
+
+    <header class="pt-40 pb-20 px-6">
+        <div class="max-w-7xl mx-auto text-center md:text-left flex flex-col md:flex-row items-center gap-16">
+            <div class="flex-1 space-y-8">
+                <div class="inline-flex items-center gap-2 bg-blue-50 dark:bg-blue-900/30 text-primary px-4 py-2 rounded-full text-xs font-black uppercase tracking-widest">
+                    <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span></span>
+                    Tersedia untuk Project Baru
+                </div>
+                <h1 class="text-6xl md:text-8xl font-extrabold leading-[1.1] tracking-tighter">Bantu Bisnis <span class="text-primary italic">Scale Up</span> ke Level Baru.</h1>
+                <p class="text-xl text-slate-500 dark:text-slate-400 max-w-2xl leading-relaxed">Saya Adhi Sukmawan, seorang Digital Strategist yang fokus memberikan hasil nyata melalui Iklan Meta, Website berperforma tinggi, dan Pemasangan WiFi.</p>
+                <div class="flex flex-col md:flex-row gap-4">
+                    <a href="/kontak" class="bg-primary text-white px-10 py-5 rounded-[2rem] font-black text-lg shadow-2xl shadow-blue-500/20 hover:scale-105 transition">Mulai Konsultasi</a>
+                    <a href="/pasang-wifi" class="border-2 border-slate-200 dark:border-slate-700 px-10 py-5 rounded-[2rem] font-black text-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition">Cek Area WiFi</a>
+                </div>
+            </div>
+            <div class="flex-1 w-full flex justify-center">
+                <div class="relative w-72 h-72 md:w-[450px] md:h-[450px]">
+                    <div class="absolute inset-0 bg-primary rounded-full blur-[100px] opacity-20 animate-pulse"></div>
+                    <div class="relative w-full h-full bg-slate-200 dark:bg-slate-800 rounded-[3rem] overflow-hidden border-4 border-white dark:border-slate-700 shadow-2xl rotate-3">
+                         <div class="absolute inset-0 flex items-center justify-center text-slate-400 font-bold italic">PHOTO ADHI</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-24 bg-slate-50 dark:bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black mb-4 tracking-tight">Kenapa Memilih Layanan Saya?</h2>
+                <div class="w-24 h-2 bg-primary mx-auto rounded-full"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-slate-800 p-10 rounded-[2.5rem] shadow-sm">
+                    <div class="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-primary mb-6"><i data-lucide="trending-up"></i></div>
+                    <h3 class="text-xl font-extrabold mb-4">Berorientasi Hasil</h3>
+                    <p class="text-slate-500 dark:text-slate-400">Setiap rupiah yang Anda keluarkan untuk iklan atau web harus kembali sebagai profit bisnis.</p>
+                </div>
+                <div class="bg-white dark:bg-slate-800 p-10 rounded-[2.5rem] shadow-sm">
+                    <div class="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-primary mb-6"><i data-lucide="shield-check"></i></div>
+                    <h3 class="text-xl font-extrabold mb-4">Bergaransi & Support</h3>
+                    <p class="text-slate-500 dark:text-slate-400">Tidak lepas tangan. Saya memberikan support purna jual untuk memastikan semua sistem berjalan lancar.</p>
+                </div>
+                <div class="bg-white dark:bg-slate-800 p-10 rounded-[2.5rem] shadow-sm">
+                    <div class="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-primary mb-6"><i data-lucide="zap"></i></div>
+                    <h3 class="text-xl font-extrabold mb-4">Eksekusi Cepat</h3>
+                    <p class="text-slate-500 dark:text-slate-400">Dunia digital bergerak cepat. Saya memastikan project selesai tepat waktu tanpa mengurangi kualitas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 text-white pt-24 pb-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-2 space-y-6">
+                    <div class="text-3xl font-black text-primary">ADHI.S</div>
+                    <p class="text-slate-400 max-w-sm leading-relaxed text-lg">Membantu transformasi digital bisnis Anda melalui ekosistem iklan, web, dan koneksi internet yang terintegrasi.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-12 h-12 bg-slate-900 rounded-xl flex items-center justify-center hover:bg-primary transition"><i data-lucide="instagram"></i></a>
+                        <a href="#" class="w-12 h-12 bg-slate-900 rounded-xl flex items-center justify-center hover:bg-primary transition"><i data-lucide="linkedin"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-black text-xl mb-6 tracking-tight text-white">Layanan</h4>
+                    <ul class="space-y-4 text-slate-400 font-medium">
+                        <li><a href="/fb-ig-ads" class="hover:text-primary transition">Facebook & Instagram Ads</a></li>
+                        <li><a href="/website-development" class="hover:text-primary transition">Website Development</a></li>
+                        <li><a href="/pasang-wifi" class="hover:text-primary transition">Pemasangan WiFi Fiber</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-black text-xl mb-6 tracking-tight text-white">Hubungi</h4>
+                    <ul class="space-y-4 text-slate-400 font-medium">
+                        <li class="flex items-center gap-3"><i data-lucide="phone" class="w-4"></i> +62 813 3294 7929</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-12 border-t border-slate-900 text-center text-slate-500 text-sm font-bold uppercase tracking-widest">
+                &copy; 2026 Adhi Sukmawan. Seluruh Hak Cipta Dilindungi.
+            </div>
+        </div>
+    </footer>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>
