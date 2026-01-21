@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasa Pembuatan Website Profesional | Adhi Sukmawan</title>
+    <meta name="description" content="Jasa pembuatan website landing page, company profile, dan toko online. Cepat, responsive, dan SEO friendly oleh Adhi Sukmawan.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-slate-50">
+    <nav class="w-full bg-white border-b px-6 py-4 flex justify-between items-center sticky top-0 z-50">
+        <a href="index.html" class="text-2xl font-black text-[#2563eb]">ADHI.S</a>
+        <div class="hidden md:flex space-x-6 font-bold text-sm">
+            <a href="/">Home</a>
+            <a href="fb-ig-ads">Meta Ads</a>
+            <a href="website-development" class="text-[#2563eb]">Website</a>
+            <a href="pasang-wifi">Pasang WiFi</a>
+            <a href="kontak">Kontak</a>
+        </div>
+    </nav>
+
+    <section class="py-20 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h1 class="text-5xl font-extrabold mb-4">Website <span class="text-[#2563eb]">Berkelas</span></h1>
+            <p class="text-slate-600">Bukan sekadar online, tapi website yang menghasilkan konversi.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12">
+            <div class="bg-white p-10 rounded-[40px] shadow-sm">
+                <i data-lucide="layout" class="text-[#2563eb] w-12 h-12 mb-6"></i>
+                <h2 class="text-2xl font-bold mb-4">Landing Page Keren</h2>
+                <p class="text-slate-600 mb-6">Satu halaman fokus untuk jualan. Cocok untuk Anda yang sedang menjalankan iklan Google atau Facebook.</p>
+                <div class="text-2xl font-bold text-[#2563eb] mb-6">Mulai Rp 1.500.000</div>
+                <button onclick="pesanWeb('Landing Page')" class="bg-slate-900 text-white px-8 py-3 rounded-xl font-bold hover:bg-[#2563eb] transition">Konsultasi Project</button>
+            </div>
+            <div class="bg-white p-10 rounded-[40px] shadow-sm">
+                <i data-lucide="globe" class="text-[#2563eb] w-12 h-12 mb-6"></i>
+                <h2 class="text-2xl font-bold mb-4">Company Profile</h2>
+                <p class="text-slate-600 mb-6">Website multi-halaman untuk membangun kepercayaan klien profesional dan personal branding Anda.</p>
+                <div class="text-2xl font-bold text-[#2563eb] mb-6">Mulai Rp 3.500.000</div>
+                <button onclick="pesanWeb('Company Profile')" class="bg-slate-900 text-white px-8 py-3 rounded-xl font-bold hover:bg-[#2563eb] transition">Konsultasi Project</button>
+            </div>
+        </div>
+    </section>
+  
+     <footer class="bg-slate-950 text-white pt-24 pb-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-2 space-y-6">
+                    <div class="text-3xl font-black text-primary italic">ADHI.S</div>
+                    <p class="text-slate-400 max-w-sm leading-relaxed">Digital Strategist yang fokus memberikan hasil nyata melalui Website berperforma tinggi.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6 uppercase tracking-widest text-primary">Layanan</h4>
+                    <ul class="space-y-4 text-slate-400 font-bold text-sm">
+                        <li><a href="fb-ig-ads" class="hover:text-white transition">Meta Ads Specialist</a></li>
+                        <li><a href="website-development" class="text-white">Web Development</a></li>
+                        <li><a href="pasang-wifi" class="hover:text-white transition">WiFi Installation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6 uppercase tracking-widest text-primary">Hubungi Adhi</h4>
+                    <p class="text-slate-400 text-sm font-bold">WhatsApp: +62 813-3294-7929</p>
+                </div>
+            </div>
+            <div class="pt-10 border-t border-slate-900 text-center flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-xs font-bold uppercase tracking-widest">&copy; 2026 Adhi Sukmawan. All Rights Reserved.</p>
+                <div class="flex gap-6 text-xs font-bold text-slate-500 uppercase tracking-widest">
+                    <a href="privacy-policy" class="hover:text-white">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function pesanWeb(tipe) {
+            const wa = "628123456789";
+            const teks = `Halo Adhi, saya tertarik buat website tipe *${tipe}*. Bisa minta detailnya?`;
+            window.open(`https://wa.me/${wa}?text=${encodeURIComponent(teks)}`, '_blank');
+        }
+        lucide.createIcons();
+    </script>
+</body>
+</html>
