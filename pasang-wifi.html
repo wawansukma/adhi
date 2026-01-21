@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id" x-data="{ darkMode: localStorage.getItem('dark') === 'true', mobileMenu: false }" :class="{ 'dark': darkMode }">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasa Pasang WiFi Rumah Terpercaya | Adhi Sukmawan</title>
+    <meta name="description" content="Pasang WiFi rumah murah & cepat. Tersedia paket Indosat HiFi, XL Home, dan MyRepublic.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#2563eb' }, fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] } } } }
+    </script>
+    <style>
+        .wifi-btn.active { background-color: #2563eb !important; color: white !important; box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3); transform: scale(1.05); }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300">
+
+    <nav class="fixed w-full z-[100] bg-white/80 dark:bg-slate-950/80 backdrop-blur-lg border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-2xl font-black text-primary italic">ADHI.S</a>
+            <div class="hidden md:flex items-center space-x-8 font-bold text-sm uppercase">
+                <a href="/" class="hover:text-primary transition">Home</a>
+                <a href="fb-ig-ads" class="hover:text-primary transition">Meta Ads</a>
+                <a href="website-development" class="hover:text-primary transition">Web Dev</a>
+                <a href="pasang-wifi" class="text-primary">WiFi</a>
+                <a href="kontak" class="hover:text-primary transition border-2 border-primary px-4 py-2 rounded-xl">Kontak</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button @click="darkMode = !darkMode; localStorage.setItem('dark', darkMode)" class="p-2 bg-slate-100 dark:bg-slate-800 rounded-xl">
+                    <i data-lucide="sun" x-show="darkMode"></i><i data-lucide="moon" x-show="!darkMode"></i>
+                </button>
+                <button @click="mobileMenu = !mobileMenu" class="md:hidden p-2"><i data-lucide="menu"></i></button>
+            </div>
+        </div>
+        <div x-show="mobileMenu" class="md:hidden bg-white dark:bg-slate-900 p-6 flex flex-col gap-4 font-bold border-b dark:border-slate-800 absolute w-full shadow-2xl">
+            <a href="/">Home</a><a href="fb-ig-ads">Meta Ads</a><a href="website-development">Web Dev</a><a href="pasang-wifi" class="text-primary">Pasang WiFi</a>
+        </div>
+    </nav>
+
+    <header class="pt-40 pb-16 px-6 max-w-7xl mx-auto text-center">
+        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 leading-tight">Internet Rumah <br><span class="text-primary italic text-6xl">Tanpa Batas.</span></h1>
+        <p class="text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+            Pendaftaran cepat, syarat mudah, dan <strong>gratis biaya instalasi.</strong> Pilih provider terbaik yang mencakup area Anda sekarang.
+        </p>
+        
+        <div class="flex flex-wrap justify-center gap-3 mb-16">
+            <button onclick="switchWifi('myrepublic')" id="btn-myrepublic" class="wifi-btn px-8 py-4 rounded-2xl font-black transition bg-white dark:bg-slate-800 text-slate-400 border border-slate-200 dark:border-slate-700">MYREPUBLIC</button>
+            <button onclick="switchWifi('xl')" id="btn-xl" class="wifi-btn px-8 py-4 rounded-2xl font-black transition bg-white dark:bg-slate-800 text-slate-400 border border-slate-200 dark:border-slate-700">XL HOME</button>
+            <button onclick="switchWifi('hifi')" id="btn-hifi" class="wifi-btn px-8 py-4 rounded-2xl font-black transition bg-white dark:bg-slate-800 text-slate-400 border border-slate-200 dark:border-slate-700">INDOSAT HiFi</button>
+        </div>
+
+        <div id="container-wifi" class="grid md:grid-cols-3 gap-8">
+            </div>
+    </header>
+
+    <section class="py-20 bg-white dark:bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12 text-center">
+            <div class="space-y-4">
+                <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mx-auto text-primary"><i data-lucide="map-pin"></i></div>
+                <h3 class="text-xl font-black uppercase">Cek Area Gratis</h3>
+                <p class="text-slate-500 text-sm">Cukup kirim shareloc, kami akan cek jaringan terbaik yang tersedia di titik Anda.</p>
+            </div>
+            <div class="space-y-4">
+                <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mx-auto text-primary"><i data-lucide="zap"></i></div>
+                <h3 class="text-xl font-black uppercase">Instalasi Cepat</h3>
+                <p class="text-slate-500 text-sm">Prioritas pemasangan 1-3 hari kerja setelah pendaftaran diverifikasi.</p>
+            </div>
+            <div class="space-y-4">
+                <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mx-auto text-primary"><i data-lucide="shield-check"></i></div>
+                <h3 class="text-xl font-black uppercase">Harga Resmi</h3>
+                <p class="text-slate-500 text-sm">Semua harga transparan sesuai paket resmi provider tanpa ada biaya tambahan.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 text-white pt-24 pb-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-2 space-y-6">
+                    <div class="text-3xl font-black text-primary italic">ADHI.S</div>
+                    <p class="text-slate-400 max-w-sm leading-relaxed">Sales Agent pendaftaran internet fiber optic terpercaya. Memberikan solusi koneksi terbaik untuk produktivitas rumah dan bisnis Anda.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6 uppercase tracking-widest text-primary">Layanan</h4>
+                    <ul class="space-y-4 text-slate-400 font-bold text-sm">
+                        <li><a href="fb-ig-ads" class="hover:text-white transition">Meta Ads Specialist</a></li>
+                        <li><a href="website-development" class="hover:text-white transition">Web Development</a></li>
+                        <li><a href="pasang-wifi" class="text-white">WiFi Installation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6 uppercase tracking-widest text-primary">Hubungi Adhi</h4>
+                    <p class="text-slate-400 text-sm font-bold">WhatsApp: +62 813-3294-7929</p>
+                </div>
+            </div>
+            <div class="pt-10 border-t border-slate-900 text-center flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-xs font-bold uppercase tracking-widest">&copy; 2026 Adhi Sukmawan. All Rights Reserved.</p>
+                <div class="flex gap-6 text-xs font-bold text-slate-500 uppercase tracking-widest">
+                    <a href="privacy-policy" class="hover:text-white">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const wifiData = {
+            myrepublic: [
+                { s: '200 Mbps', p: '233.100', d: 'Jaringan 4G & 5G, Unlimited, Sudah PPN, Termasuk Alat WiFi, Gratis Pasang' },
+                { s: '300 Mbps', p: '277.500', d: 'Jaringan 4G & 5G, Unlimited, Sudah PPN, Termasuk Alat WiFi, Gratis Pasang' },
+                { s: '400 Mbps', p: '333.000', d: 'Jaringan 4G & 5G, Unlimited, Sudah PPN, Termasuk Alat WiFi, Gratis Pasang, Prioritas Support' }
+            ],
+            xl: [
+                { s: '30 Mbps', p: '259.000', d: 'Bonus Kuota HP 8GB, Fiber Optic' },
+                { s: '50 Mbps', p: '334.000', d: 'Bonus Kuota HP 15GB, Entertainment Box' }
+            ],
+            hifi: [
+                { s: '30 Mbps', p: '309.000', d: 'Simetris 1:1, Low Latency' },
+                { s: '50 Mbps', p: '409.000', d: 'Gamer Plan, Fast Upload' }
+            ]
+        };
+
+        function switchWifi(provider) {
+            // Update UI Button
+            document.querySelectorAll('.wifi-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('btn-' + provider).classList.add('active');
+
+            // Render Paket Dinamis dengan Desain Baru
+            const container = document.getElementById('container-wifi');
+            container.innerHTML = '';
+            
+            wifiData[provider].forEach(item => {
+                container.innerHTML += `
+                    <div class="bg-white dark:bg-slate-900 p-10 rounded-[3rem] shadow-sm border border-slate-100 dark:border-slate-800 hover:border-primary transition-all duration-300 group">
+                        <div class="text-primary mb-6 flex justify-center"><i data-lucide="wifi" class="w-10 h-10"></i></div>
+                        <h3 class="text-3xl font-black mb-2 italic tracking-tighter">${item.s}</h3>
+                        <p class="text-primary font-bold text-xl mb-6">Rp ${item.p}<span class="text-xs text-slate-400">/bln</span></p>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 mb-8 font-medium leading-relaxed">${item.d}</p>
+                        <button onclick="sendWA('${provider}', '${item.s}', '${item.p}', '${item.d}')" 
+                                class="w-full bg-slate-950 dark:bg-slate-800 text-white py-5 rounded-2xl font-black uppercase tracking-widest text-sm hover:bg-primary dark:hover:bg-primary transition-colors">
+                            Pasang Sekarang
+                        </button>
+                    </div>
+                `;
+            });
+            lucide.createIcons(); // Re-render icons after DOM update
+        }
+
+        function sendWA(provider, speed, price, specs) {
+            const wa = "6281332947929"; 
+            const msg = `Halo Adhi, saya mau pasang WiFi:\n\n*Provider:* ${provider.toUpperCase()}\n*Paket:* ${speed}\n*Harga:* Rp ${price}\n*Spek:* ${specs}\n\nMohon bantuannya untuk pendaftaran.`;
+            window.open(`https://wa.me/${wa}?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        // Jalankan MyRepublic otomatis saat load pertama
+        window.onload = () => {
+            switchWifi('myrepublic');
+            lucide.createIcons();
+        };
+    </script>
+</body>
+</html>
