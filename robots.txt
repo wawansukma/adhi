@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Link ke sitemap Anda
+Sitemap: https://adhisukmawan.my.id/sitemap.xml
