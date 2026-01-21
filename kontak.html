@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak Adhi Sukmawan | Konsultasi Jasa Iklan & Website</title>
+    <meta name="description" content="Hubungi Adhi Sukmawan untuk konsultasi jasa iklan Facebook Ads, pembuatan website, atau pemasangan WiFi rumah.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-slate-50 min-h-screen flex flex-col items-center justify-center p-6">
+    <div class="max-w-xl w-full bg-white p-10 rounded-[45px] shadow-2xl border-b-[10px] border-[#2563eb]">
+        <h1 class="text-3xl font-extrabold mb-2 italic">Hubungi Adhi.</h1>
+        <p class="text-slate-500 mb-8">Pesan Anda akan langsung terkirim ke WhatsApp saya.</p>
+
+        <form id="contactForm" class="space-y-4">
+            <input type="text" id="nama" placeholder="Nama Lengkap" class="w-full p-5 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-[#2563eb]" required>
+            <input type="email" id="email" placeholder="Alamat Email" class="w-full p-5 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-[#2563eb]" required>
+            <select id="layanan" class="w-full p-5 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-[#2563eb]">
+                <option value="FB/IG Ads">Jasa Iklan FB/IG Ads</option>
+                <option value="Website">Pembuatan Website</option>
+                <option value="WiFi">Pemasangan WiFi</option>
+            </select>
+            <textarea id="pesan" placeholder="Ceritakan kebutuhan Anda..." class="w-full p-5 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-[#2563eb] h-32" required></textarea>
+            
+            <button type="submit" class="w-full bg-[#2563eb] text-white py-5 rounded-[25px] font-black text-lg shadow-lg hover:bg-blue-700 transition">KIRIM SEKARANG</button>
+        </form>
+        <div class="mt-8 text-center">
+            <a href="index.html" class="text-slate-400 font-bold hover:text-[#2563eb]"> Kembali ke Home</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const wa = "6281332947929"; // GANTI NOMOR WA ANDA
+            const nama = document.getElementById('nama').value;
+            const email = document.getElementById('email').value;
+            const layanan = document.getElementById('layanan').value;
+            const pesan = document.getElementById('pesan').value;
+
+            const text = `*Pesan Baru dari Website*\n\nNama: ${nama}\nEmail: ${email}\nLayanan: ${layanan}\n\n*Pesan:*\n${pesan}`;
+            window.open(`https://wa.me/${wa}?text=${encodeURIComponent(text)}`, '_blank');
+        });
+    </script>
+</body>
+</html>
