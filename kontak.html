@@ -17,9 +17,9 @@
             <input type="text" id="nama" placeholder="Nama Lengkap" class="w-full p-5 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-[#2563eb]" required>
             <input type="email" id="email" placeholder="Alamat Email" class="w-full p-5 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-[#2563eb]" required>
             <select id="layanan" class="w-full p-5 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-[#2563eb]">
+                <option value="WiFi">Pemasangan WiFi</option>
                 <option value="FB/IG Ads">Jasa Iklan FB/IG Ads</option>
                 <option value="Website">Pembuatan Website</option>
-                <option value="WiFi">Pemasangan WiFi</option>
             </select>
             <textarea id="pesan" placeholder="Ceritakan kebutuhan Anda..." class="w-full p-5 bg-slate-50 rounded-2xl border-none focus:ring-2 focus:ring-[#2563eb] h-32" required></textarea>
             
@@ -33,7 +33,7 @@
     <script>
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const wa = "6281332947929"; // GANTI NOMOR WA ANDA
+            const wa = "6281332947929";
             const nama = document.getElementById('nama').value;
             const email = document.getElementById('email').value;
             const layanan = document.getElementById('layanan').value;
